@@ -3,29 +3,37 @@
         <html lang="en"></html>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pizza Hub</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="style.css">
+        <title>Quick Serve Food & Pizza | Pizza Hub</title>
     </head>
 
     <body>
         <div class="wrapper">
 
             <div class="navbar">
-                <div class="logo"><img src="pizza_logo.png" alt="Pizza Hub Logo"></div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#menu">Menu</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+                <img src="Content/PizzaHub_Logo.png">
+                <div class="navbar-links">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="menu.html">Menu</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <a href="order.html" class="order-now">Order Now</a>
             </div>
-            
-            <div class="home">
-                <h1>Welcome to Pizza Hub</h1>
-                <p>Your favorite place for delicious pizzas!</p>
-                <a href="#menu" class="btn">Order Now</a>
+
+            <div class="home" src="Content/PizzaHub_Home.jpg">
+                <h1>Pizza Hub Charlottetown</h1>
+                <p>Charlottetown's</p>
+                <p>Best Pizza</p>
+                <button href="#menu" class="btn">Order Now</button>
+            </div>
+
+            <div class="discover">
+                <h1>Discover Our Menu</h1>
+                <p>Explore our wide range of pizzas, sides, and drinks.</p>
             </div>
 
         </div>
+        <script src="script.js"></script>
     </body>
 </html>

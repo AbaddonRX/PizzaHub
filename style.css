@@ -1,5 +1,165 @@
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* BODY ==================================================================================================*/
+body {
+    background-color: black;
+    padding: 0;
+    margin: 0;
 }
+/* BODY END ==============================================================================================*/
+
+/* BASE NAVBAR ===========================================================================================*/
+.navbar {
+    background-color: white;
+    height: 100px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0 2vw;
+}
+
+.navbar img {
+    height: 125px;
+    position: absolute;
+    left: 25%;
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vh;
+}
+
+.navbar a {
+    color: grey;
+    text-decoration: none;
+    font-size: 2.25vh;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    color: red;
+}
+
+.navbar a.active {
+    color: red;
+}
+
+.navbar .order-now {
+    background-color: rgb(216, 114, 54);
+    color: white;
+    border: none;
+    padding: 1vh 2vh;
+    font-size: 2vh;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+    position: absolute;
+    right: 25%;
+}
+
+.navbar .order-now:hover {
+    background-color: rgb(255, 0, 0);
+    color: white;
+}
+/* BASE NAVBAR END =======================================================================================*/
+
+/* NAVBAR ANIMATION ======================================================================================*/
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.2em;
+    width: 0;
+    height: 0.15em;
+    background-color: red;
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.navbar a.active::after {
+    width: 100%;
+    background-color: red;
+}
+/* NAVBAR ANIMATION END ==================================================================================*/
+
+/* MAIN IMG ==============================================================================================*/
+.home {
+    background-size: cover;
+    background-position: center - 10vh;
+    background-attachment: fixed;
+    background-image: url("Content/PizzaHub_BG.jpg");
+    height: 70vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 20vh;
+}
+
+.home h1 {
+    color: white;
+    font-size: 4vh;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 1vh;
+}
+
+.home p {
+    color: white;
+    text-decoration: none;
+    font-size: 12vh;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+    margin-top: 0;
+    margin-bottom: 1vh;
+}
+
+.home button {
+    background-color: rgb(216, 114, 54);
+    color: white;
+    border: none;
+    padding: 1.5vh 3vh;
+    font-size: 4vh;
+    cursor: pointer;
+    margin-top: 1vh;
+    border-radius: 10px;
+}
+
+.home button:hover {
+    background-color: rgb(255, 0, 0);
+    color: white;
+    transition: background-color 0.3s ease-in-out;
+}
+/* MAIN IMG END ==========================================================================================*/
+
+/* ABOUT SECTION =========================================================================================*/
+.discover {
+    background-color: white;
+    height: 30vh;
+    padding-left: 25%;
+    padding-right: 25%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.discover p {
+    color: black;
+    font-size: 2vh;
+    margin: 0;
+}
+/* ABOUT SECTION END =====================================================================================*/
