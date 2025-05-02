@@ -10,7 +10,6 @@ body {
 .navbar {
     background-color: white;
     height: 100px;
-    width: 100%;
     position: sticky;
     top: 0;
     z-index: 1000;
