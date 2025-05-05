@@ -24,7 +24,7 @@ body {
 .navbar img {
     height: 125px;
     position: absolute;
-    left: 25%;
+    left: 7.5%;
 }
 
 .navbar-links {
@@ -36,6 +36,7 @@ body {
 
 .navbar a {
     color: grey;
+    font-family: 'Bebas Neue', sans-serif;
     text-decoration: none;
     font-size: 2.25vh;
     position: relative;
@@ -52,26 +53,28 @@ body {
 
 .navbar .order-now {
     background-color: rgb(216, 114, 54);
+    font-family: 'Bebas Neue', sans-serif;
     color: white;
     border: none;
-    padding: 1vh 2vh;
-    font-size: 2vh;
+    padding: 1.5vh 3vh;
+    font-size: 3vh;
     cursor: pointer;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: background-color 0.3s ease-in-out;
     position: absolute;
-    right: 25%;
+    right: 7.5%;
 }
 
 .navbar .order-now:hover {
     background-color: rgb(255, 0, 0);
+    text-decoration: none;
     color: white;
 }
 /* BASE NAVBAR END =======================================================================================*/
 
 /* NAVBAR ANIMATION ======================================================================================*/
-.navbar a::after {
+.navbar-links a::after {
     content: '';
     position: absolute;
     left: 0;
@@ -82,11 +85,11 @@ body {
     transition: width 0.3s ease-in-out;
 }
 
-.navbar a:hover::after {
+.navbar-links a:hover::after {
     width: 100%;
 }
 
-.navbar a.active::after {
+.navbar-links a.active::after {
     width: 100%;
     background-color: red;
 }
@@ -129,7 +132,7 @@ body {
     background-color: rgb(216, 114, 54);
     color: white;
     border: none;
-    padding: 1.5vh 3vh;
+    padding: 2vh 4vh;
     font-size: 4vh;
     cursor: pointer;
     margin-top: 1vh;
@@ -162,3 +165,27 @@ body {
     margin: 0;
 }
 /* ABOUT SECTION END =====================================================================================*/
+
+/* MENU SECTION ==========================================================================================*/
+.build {
+    background-color: white;
+    height: 30vh;
+    padding-left: 25%;
+    padding-right: 25%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    background-color: white;
+    height: 100vh;
+    padding-left: 25%;
+    padding-right: 25%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
