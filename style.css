@@ -249,6 +249,7 @@ body {
     align-items: center;
     flex-direction: column;
     gap: 5vh; /* Adds spacing between the image and the form */
+    padding-right: 6vh;
 }
 
 .myopcontainer2 {
@@ -273,3 +274,71 @@ body {
     align-items: flex-start;
     gap: 2vh;
 }
+
+#size {
+    width: 100%;
+    padding: 1vh;
+    font-size: 2vh;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    border-radius: 5px;
+}
+
+#crust {
+    width: 100%;
+    padding: 1vh;
+    font-size: 2vh;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    border-radius: 5px;
+}
+
+.toppings-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vh; /* Adds spacing between each topping */
+    margin-top: 2vh;
+}
+
+.topping-item {
+    display: flex;
+    align-items: center;
+    gap: 1vh; /* Adds spacing between the checkbox and label */
+    background-color: #f9f9f9; /* Light background for each item */
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    border-radius: 5px;
+    padding: 1vh 2vh; /* Adds padding inside each item */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.topping-item:hover {
+    background-color: #ffe6cc; /* Highlight on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.topping-item input[type="checkbox"] {
+    width: 2vh;
+    height: 2vh;
+    accent-color: rgb(216, 114, 54); /* Custom checkbox color */
+    cursor: pointer;
+}
+
+.topping-item label {
+    font-size: 2vh;
+    color: #333;
+    cursor: pointer;
+}
+
+.ordernow {
+    background-color: rgb(216, 114, 54);
+    color: white;
+    border: none;
+    padding: 1.5vh 3vh;
+    font-size: 3vh;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease-in-out;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
