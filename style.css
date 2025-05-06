@@ -227,3 +227,49 @@ body {
     margin: 0.5vh 0 0 0;
     color: rgb(80, 80, 80);
 }
+/* MENU SECTION END ======================================================================================*/
+
+/* MY ORDER SECTION =====================================================================================*/
+.pizza-image {
+    width: 50%;
+    height: 50%;
+}
+
+.contentmyop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vh;
+}
+
+.myopcontainer {
+    border-top: 2px solid rgb(255, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5vh; /* Adds spacing between the image and the form */
+}
+
+.myopcontainer2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vh; /* Adds spacing between the image and the form */
+}
+
+.pizza-image {
+    flex: 1; /* Ensures the image takes up its space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.myop-form {
+    flex: 1; /* Ensures the form takes up its space */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2vh;
+}
