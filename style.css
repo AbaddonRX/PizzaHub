@@ -4,6 +4,15 @@ body {
     padding: 0;
     margin: 0;
 }
+
+.footer {
+    background-color: white;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 /* BODY END ==============================================================================================*/
 
 /* BASE NAVBAR ===========================================================================================*/
@@ -49,27 +58,6 @@ body {
 
 .navbar a.active {
     color: red;
-}
-
-.navbar .order-now {
-    background-color: rgb(216, 114, 54);
-    font-family: 'Bebas Neue', sans-serif;
-    color: white;
-    border: none;
-    padding: 1.5vh 3vh;
-    font-size: 3vh;
-    cursor: pointer;
-    text-decoration: none;
-    border-radius: 10px;
-    transition: background-color 0.3s ease-in-out;
-    position: absolute;
-    right: 7.5%;
-}
-
-.navbar .order-now:hover {
-    background-color: rgb(255, 0, 0);
-    text-decoration: none;
-    color: white;
 }
 /* BASE NAVBAR END =======================================================================================*/
 
@@ -172,7 +160,6 @@ body {
     background-color: white;
     padding-left: 6vh;
     padding-right: 6vh;
-    padding-bottom: 5vh;
 
     display: flex;
     flex-direction: column;
@@ -227,6 +214,16 @@ body {
     margin: 0.5vh 0 0 0;
     color: rgb(80, 80, 80);
 }
+
+.menu-item:hover {
+    background-color: rgba(128, 128, 128, 0.25);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.menu-top {
+    padding-top: 3.5vh;
+    padding-bottom: 3.5vh;
+}
 /* MENU SECTION END ======================================================================================*/
 
 /* MY ORDER SECTION =====================================================================================*/
@@ -248,28 +245,52 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 5vh; /* Adds spacing between the image and the form */
+    gap: 5vh;
 }
 
 .myopcontainer2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5vh; /* Adds spacing between the image and the form */
+    gap: 5vh;
 }
 
 .pizza-image {
-    flex: 1; /* Ensures the image takes up its space */
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .myop-form {
-    flex: 1; /* Ensures the form takes up its space */
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 2vh;
 }
+/* MY ORDER SECTION END ==================================================================================*/
+
+/* CONTACT SECTION ==================================================================================*/
+.contact {
+    border-top: 2px solid rgb(255, 0, 0);
+    background-color: white;
+    padding-left: 6vh;
+    padding-right: 6vh;
+    padding-bottom: 5vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}  
+
+.contact form{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    width: 100%;
+    max-width: 600px;
+}
+/* CONTACT SECTION END ==================================================================================*/
