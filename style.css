@@ -226,36 +226,28 @@ body {
 }
 /* MENU SECTION END ======================================================================================*/
 
-/* MY ORDER SECTION =====================================================================================*/
-.pizza-image {
+/* MYOP SECTION =====================================================================================*/
+.titleBar {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.myopContainer {
+    background-color: white;
+    padding-left: 7vh;
+    padding-right: 7vh;
+    padding-bottom: 5vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pizzaImg {
     width: 50%;
     height: 50%;
-}
-
-.contentmyop {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5vh;
-}
-
-.myopcontainer {
-    border-top: 2px solid rgb(255, 0, 0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 5vh;
-}
-
-.myopcontainer2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5vh;
-}
-
-.pizza-image {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -338,7 +330,7 @@ body {
     font-family: 'Bebas Neue', sans-serif;
 }
 
-/* MY ORDER SECTION END ===============================================================================*/
+/* MYOP SECTION END ===============================================================================*/
 
 /* CONTACT SECTION ==================================================================================*/
 .contact {

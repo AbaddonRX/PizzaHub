@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-        <title>Make-Your-Own Pizza | Pizza Hub</title>
+        <title>Make-Your-Own Pizza | PizzaHub</title>
     </head>
 
     <body>
@@ -19,94 +19,94 @@
                     <a href="contact.html">CONTACT</a>
                 </div>
             </div>
+
+            <h1 class="titleBar">Make-Your-Own Pizza!</h1>
+
+            <div class="myopContainer">
+                <img src="Content/myoptopdown.webp" class="pizzaImg">
+                <div class="myop-form">
+                    <form id="myop-form" action="order.html" method="POST">
+                        <label for="size">Choose a size: <br> </label>
+                        <select id="size" name="size" required aria-label="Pizza size">
+                            <option value="" disabled selected>Select a size</option>
+                            <option value="small">Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="large">Large</option>  
+                        </select>
+                        <br><br>
+                        <label for="crust">Choose a crust: <br> </label>
+                        <select id="crust" name="crust" required>
+                            <option value="">Select a crust</option>
+                            <option value="thin">Thin</option>
+                            <option value="thick">Thick</option>
+                            <option value="stuffed">Stuffed</option>
+                        </select>
+                        <br><br>
+
+                        <label for="toppings">Choose your toppings: <br> </label><br>
+
+                        <div class="toppings-container">
+                            <div class="topping-item">
+                                <input type="checkbox" id="pepperoni" name="toppings" value="pepperoni">
+                                <label for="pepperoni">Pepperoni</label>
+                            </div>
+                            <div class="topping-item">
+                                <input type="checkbox" id="mushrooms" name="toppings" value="mushrooms">
+                                <label for="mushrooms">Mushrooms</label>
+                            </div>
+                            <div class="topping-item">
+                                <input type="checkbox" id="onions" name="toppings" value="onions">
+                                <label for="onions">Onions</label>
+                            </div>
+                            <div class="topping-item">
+                                <input type="checkbox" id="sausage" name="toppings" value="sausage">
+                                <label for="sausage">Sausage</label>
+                            </div>
+                            <div class="topping-item">
+                                <input type="checkbox" id="bacon" name="toppings" value="bacon">
+                                <label for="bacon">Bacon</label>
+                            </div>
+                            <div class="topping-item">
+                                <input type="checkbox" id="extra-cheese" name="toppings" value="extra-cheese">
+                                <label for="extra-cheese">Extra Cheese</label>
+                            </div>
+                            <div class="topping-item">
+                                <input type="checkbox" id="black-olives" name="toppings" value="black-olives">
+                                <label for="black-olives">Black Olives</label>
+                            </div>
+                            <div class="topping-item">
+                                <input type="checkbox" id="green-peppers" name="toppings" value="green-peppers">
+                                <label for="green-peppers">Green Peppers</label>
+                            </div>
+                            <div class="topping-item">
+                                <input type="checkbox" id="pineapple" name="toppings" value="pineapple">
+                                <label for="pineapple">Pineapple</label>
+                            </div>
+                            <div class="topping-item">
+                                <input type="checkbox" id="spinach" name="toppings" value="spinach">
+                                <label for="spinach">Spinach</label>
+                            </div>
+
+                            <div class="topping-item">
+                                <input type="checkbox" id="chicken" name="toppings" value="chicken">
+                                <label for="chicken">Grilled Chicken</label>
+                            </div>
+
+                            <div class="topping-item">
+                                <input type="checkbox" id="jalapenos" name="toppings" value="jalapenos">
+                                <label for="jalapenos">Jalapeños</label>
+                            </div>
+                        </div>
+
+                        <br><br>
+                        <button type="submit" class="ordernow">Order Now!</button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="myopcontainer">
-            <div class="contentmyop">
-                <h1>Make Your Own Pizza</h1>
-                <p>Choose your favorite toppings and create your own delicious pizza!</p>
-            </div>
-            <div class="myopcontainer2">
-            <div class="pizza-image">
-                <img src="Content/myoptopdown.webp" alt="Pizza Image" class="pizza-image">
-            </div>
-            <div class="myop-form">
-                <form id="myop-form" action="order.html" method="POST">
-                    <label for="size">Choose a size: <br> </label>
-                    <select id="size" name="size" required>
-                        <option value="">Select a size </option>
-                        <option value="small">Small</option>
-                        <option value="medium">Medium</option>
-                        <option value="large">Large</option>  
-                    </select>
-                    <br><br>
-                    <label for="crust">Choose a crust: <br> </label>
-                    <select id="crust" name="crust" required>
-                        <option value="">Select a crust</option>
-                        <option value="thin">Thin</option>
-                        <option value="thick">Thick</option>
-                        <option value="stuffed">Stuffed</option>
-                    </select>
-                    <br><br>
-                    <label for="toppings">Choose your toppings: <br> </label><br>
-                    <div class="toppings-container">
-                        <div class="topping-item">
-                            <input type="checkbox" id="pepperoni" name="toppings" value="pepperoni">
-                            <label for="pepperoni">Pepperoni</label>
-                        </div>
-                        <div class="topping-item">
-                            <input type="checkbox" id="mushrooms" name="toppings" value="mushrooms">
-                            <label for="mushrooms">Mushrooms</label>
-                        </div>
-                        <div class="topping-item">
-                            <input type="checkbox" id="onions" name="toppings" value="onions">
-                            <label for="onions">Onions</label>
-                        </div>
-                        <div class="topping-item">
-                            <input type="checkbox" id="sausage" name="toppings" value="sausage">
-                            <label for="sausage">Sausage</label>
-                        </div>
-                        <div class="topping-item">
-                            <input type="checkbox" id="bacon" name="toppings" value="bacon">
-                            <label for="bacon">Bacon</label>
-                        </div>
-                        <div class="topping-item">
-                            <input type="checkbox" id="extra-cheese" name="toppings" value="extra-cheese">
-                            <label for="extra-cheese">Extra Cheese</label>
-                        </div>
-                        <div class="topping-item">
-                            <input type="checkbox" id="black-olives" name="toppings" value="black-olives">
-                            <label for="black-olives">Black Olives</label>
-                        </div>
-                        <div class="topping-item">
-                            <input type="checkbox" id="green-peppers" name="toppings" value="green-peppers">
-                            <label for="green-peppers">Green Peppers</label>
-                        </div>
-                        <div class="topping-item">
-                            <input type="checkbox" id="pineapple" name="toppings" value="pineapple">
-                            <label for="pineapple">Pineapple</label>
-                        </div>
-                        <div class="topping-item">
-                            <input type="checkbox" id="spinach" name="toppings" value="spinach">
-                            <label for="spinach">Spinach</label>
-                        </div>
-
-                        <div class="topping-item">
-                            <input type="checkbox" id="chicken" name="toppings" value="chicken">
-                            <label for="chicken">Grilled Chicken</label>
-                        </div>
-
-                        <div class="topping-item">
-                            <input type="checkbox" id="jalapenos" name="toppings" value="jalapenos">
-                            <label for="jalapenos">Jalapeños</label>
-                        </div>
-                    </div>
-                    <br><br>
-                    <button type="submit" class="ordernow">Order Now!</button>
-                </form>
-            </div>
-            <footer class="footer">
-                <p>&copy; 2025 PizzaHub. All rights reserved.</p>
-            </footer>
+        <footer class="footer">
+            <p>&copy; 2025 PizzaHub. All rights reserved.</p>
+        </footer>
         <script src="script.js"></script>
     </body>
 </html>
