@@ -338,3 +338,27 @@ body {
     font-family: 'Bebas Neue', sans-serif;
 }
 
+/* MY ORDER SECTION END ===============================================================================*/
+
+/* CONTACT SECTION ==================================================================================*/
+.contact {
+    border-top: 2px solid rgb(255, 0, 0);
+    background-color: white;
+    padding-left: 6vh;
+    padding-right: 6vh;
+    padding-bottom: 5vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}  
+
+.contact form{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    width: 100%;
+    max-width: 600px;
+}
+/* CONTACT SECTION END ==================================================================================*/
