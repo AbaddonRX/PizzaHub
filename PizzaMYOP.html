@@ -12,15 +12,17 @@
         <div class="wrapper">
 
             <div class="navbar">
-                <img src="Content/PizzaHub_Logo.png">
+                <img src="Content/PizzaHub_Logo.png" class="mainLogo">
                 <div class="navbar-links">
                     <a href="PizzaHub.html">HOME</a>
                     <a href="PizzaMenu.html">MENU</a>
                     <a href="contact.html">CONTACT</a>
                 </div>
+                <img src="Content/cart.png" class="cart-icon" onclick="location.href='PizzaOrder.html'">
+                <span class="cart-counter" id="cart-counter">0</span>
             </div>
 
-            <h1 class="titleBar">Make-Your-Own Pizza!</h1>
+            <div class="titleBar"><h1>Make-Your-Own Pizza!</h1></div>
 
             <div class="myopContainer">
                 <img src="Content/myoptopdown.webp" class="pizzaImg">
@@ -99,7 +101,7 @@
                         </div>
 
                         <br><br>
-                        <button type="submit" class="ordernow">Order Now!</button>
+                        <button type="submit" class="ordernow">Add to cart</button>
                     </form>
                 </div>
             </div>

@@ -30,10 +30,34 @@ body {
     padding: 0 2vw;
 }
 
-.navbar img {
+.mainLogo {
     height: 125px;
     position: absolute;
     left: 7.5%;
+}
+
+.cart-icon {
+    right: 7.5%;
+    position: absolute;
+    height: 55px;
+    cursor: pointer;
+}
+
+.cart-counter {
+    position: absolute;
+    top: 55%;
+    right: 7%;
+    background-color: red;
+    color: white;
+    font-size: 2.5vh;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 3.5vh;
+    height: 3.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
 }
 
 .navbar-links {
@@ -137,9 +161,10 @@ body {
 /* ABOUT SECTION =========================================================================================*/
 .discover {
     background-color: white;
-    height: 30vh;
-    padding-left: 25%;
-    padding-right: 25%;
+    padding-left: 7vh;
+    padding-right: 7vh;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
 
     display: flex;
     flex-direction: column;
@@ -185,6 +210,8 @@ body {
     border-radius: 5px;
     padding: 1.5vh;
     box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
 }
 
 .menu-item img {
@@ -224,11 +251,44 @@ body {
     padding-top: 3.5vh;
     padding-bottom: 3.5vh;
 }
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    background-color: white;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    border-radius: 5px;
+    padding: 1vh;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.dropdown-menu label {
+    display: flex;
+    align-items: center;
+    gap: 1vh;
+    margin-bottom: 0.5vh;
+}
+
+.dropdown-menu .add-to-cart {
+    margin-top: 1vh;
+    padding: 0.5vh 1vh;
+    background-color: rgb(216, 114, 54);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 /* MENU SECTION END ======================================================================================*/
 
 /* MYOP SECTION =====================================================================================*/
 .titleBar {
+    padding-top: 3vh;
     background-color: white;
+    border-top: 2px solid rgb(255, 0, 0);
     display: flex;
     justify-content: center;
     align-items: center;

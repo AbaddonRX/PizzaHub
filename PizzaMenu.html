@@ -10,12 +10,14 @@
     <body>
         <div class="wrapper">
             <div class="navbar">
-                <img src="Content/PizzaHub_Logo.png">
+                <img src="Content/PizzaHub_Logo.png" class="mainLogo">
                 <div class="navbar-links">
                     <a href="PizzaHub.html">HOME</a>
                     <a href="PizzaMenu.html" class="active">MENU</a>
                     <a href="contact.html">CONTACT</a>
                 </div>
+                <img src="Content/cart.png" class="cart-icon" onclick="location.href='PizzaOrder.html'">
+                <span class="cart-counter" id="cart-counter">0</span>
             </div>
 
             <div class="menu">
@@ -30,11 +32,23 @@
                         </div>
                     </div>
 
-                    <div class="menu-item">
+                    <div class="menu-item" onclick="toggleDropdown(this)">
                         <img src="Content/menupizza1.webp">
                         <div class="menu-item-content">
                             <h3>Pepperoni Pizza<br>$10.99 / $14.99 / $19.99</h3>
                             <p>Loaded with pepperoni slices and delicious melted cheese.</p>
+                        </div>
+                        <div class="dropdown-menu">
+                            <label>
+                                <input type="radio" name="pepperoni-size" value="Small - $10.99"> Small - $10.99
+                            </label>
+                            <label>
+                                <input type="radio" name="pepperoni-size" value="Medium - $14.99"> Medium - $14.99
+                            </label>
+                            <label>
+                                <input type="radio" name="pepperoni-size" value="Large - $19.99"> Large - $19.99
+                            </label>
+                            <button class="add-to-cart" onclick="addToCart('Pepperoni Pizza', this)">Add to Cart</button>
                         </div>
                     </div>
 
