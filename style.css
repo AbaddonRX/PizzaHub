@@ -305,13 +305,25 @@ body {
     align-items: center;
 }
 
-.pizzaImg {
+.pizzaCanvasWrapper {
+    position: relative;
     width: 50%;
     height: 50%;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+.pizzaImg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#pizzaCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevent interaction with the canvas */
 }
 
 .myop-form {
@@ -332,6 +344,14 @@ body {
 }
 
 #crust {
+    width: 100%;
+    padding: 1vh;
+    font-size: 2vh;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    border-radius: 5px;
+}
+
+#sauce {
     width: 100%;
     padding: 1vh;
     font-size: 2vh;
@@ -388,6 +408,78 @@ body {
     border-radius: 10px;
     transition: background-color 0.3s ease-in-out;
     font-family: 'Bebas Neue', sans-serif;
+}
+
+.order-type-container {
+    display: flex;
+    gap: 2vh; /* Adds spacing between the radio button items */
+    margin-top: 2vh;
+}
+
+.order-type-item {
+    display: flex;
+    align-items: center;
+    gap: 1vh; /* Adds spacing between the radio button and label */
+    background-color: #f9f9f9; /* Light background for each item */
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    border-radius: 5px;
+    padding: 1vh 2vh; /* Adds padding inside each item */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.order-type-item:hover {
+    background-color: #ffe6cc; /* Highlight on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.order-type-item input[type="radio"] {
+    width: 2vh;
+    height: 2vh;
+    accent-color: rgb(216, 114, 54); /* Custom radio button color */
+    cursor: pointer;
+}
+
+.order-type-item label {
+    font-size: 2vh;
+    color: #333;
+    cursor: pointer;
+}
+
+.price-breakdown {
+    margin-top: 2vh;
+    padding: 1.5vh;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.price-breakdown h3 {
+    font-size: 2.5vh;
+    margin-bottom: 1vh;
+    color: #333;
+}
+
+.price-breakdown ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.price-breakdown ul li {
+    font-size: 2vh;
+    color: #555;
+    margin-bottom: 0.5vh;
+}
+
+.price-breakdown p {
+    font-size: 2.2vh;
+    font-weight: bold;
+    color: #333;
+    margin-top: 1vh;
 }
 
 /* MYOP SECTION END ===============================================================================*/

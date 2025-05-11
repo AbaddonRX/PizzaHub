@@ -25,9 +25,24 @@
             <div class="titleBar"><h1>Make-Your-Own Pizza!</h1></div>
 
             <div class="myopContainer">
-                <img src="Content/myoptopdown.webp" class="pizzaImg">
+                <div class="pizzaCanvasWrapper">
+                    <img src="Content/myoptopdown.webp" class="pizzaImg">
+                    <canvas id="pizzaCanvas"></canvas>
+                </div>
                 <div class="myop-form">
                     <form id="myop-form" action="order.html" method="POST">
+                        <label for="order-type">Choose your order type: <br></label>
+                        <div class="order-type-container">
+                            <div class="order-type-item">
+                                <input type="radio" id="delivery" name="order-type" value="delivery" required>
+                                <label for="delivery">Delivery</label>
+                            </div>
+                            <div class="order-type-item">
+                                <input type="radio" id="takeout" name="order-type" value="takeout">
+                                <label for="takeout">Takeout</label>
+                            </div>
+                        </div>
+                        <br><br>
                         <label for="size">Choose a size: <br> </label>
                         <select id="size" name="size" required aria-label="Pizza size">
                             <option value="" disabled selected>Select a size</option>
@@ -44,63 +59,78 @@
                             <option value="stuffed">Stuffed</option>
                         </select>
                         <br><br>
-
+                        <label for="sauce">Choose a sauce: <br> </label>
+                        <select id="sauce" name="sauce" required>
+                            <option value="">Select a sauce</option>
+                            <option value="thin">Marinara</option>
+                            <option value="thick">BBQ</option>
+                            <option value="stuffed">Donair Sauce</option>
+                        </select>
+                        <br><br>
                         <label for="toppings">Choose your toppings: <br> </label><br>
 
                         <div class="toppings-container">
                             <div class="topping-item">
-                                <input type="checkbox" id="pepperoni" name="toppings" value="pepperoni">
-                                <label for="pepperoni">Pepperoni</label>
+                                <input type="checkbox" id="Pepperoni" name="toppings" value="pepperoni">
+                                <label for="Pepperoni">Pepperoni</label>
                             </div>
                             <div class="topping-item">
-                                <input type="checkbox" id="mushrooms" name="toppings" value="mushrooms">
-                                <label for="mushrooms">Mushrooms</label>
+                                <input type="checkbox" id="Mushrooms" name="toppings" value="mushrooms">
+                                <label for="Mushrooms">Mushrooms</label>
                             </div>
                             <div class="topping-item">
-                                <input type="checkbox" id="onions" name="toppings" value="onions">
-                                <label for="onions">Onions</label>
+                                <input type="checkbox" id="Onions" name="toppings" value="onions">
+                                <label for="Onions">Onions</label>
                             </div>
                             <div class="topping-item">
-                                <input type="checkbox" id="sausage" name="toppings" value="sausage">
-                                <label for="sausage">Sausage</label>
+                                <input type="checkbox" id="Sausage" name="toppings" value="sausage">
+                                <label for="Sausage">Sausage</label>
                             </div>
                             <div class="topping-item">
-                                <input type="checkbox" id="bacon" name="toppings" value="bacon">
-                                <label for="bacon">Bacon</label>
+                                <input type="checkbox" id="Bacon" name="toppings" value="bacon">
+                                <label for="Bacon">Bacon</label>
                             </div>
                             <div class="topping-item">
-                                <input type="checkbox" id="extra-cheese" name="toppings" value="extra-cheese">
-                                <label for="extra-cheese">Extra Cheese</label>
+                                <input type="checkbox" id="Extra-Cheese" name="toppings" value="extra-cheese">
+                                <label for="Extra-Cheese">Extra Cheese</label>
                             </div>
                             <div class="topping-item">
-                                <input type="checkbox" id="black-olives" name="toppings" value="black-olives">
-                                <label for="black-olives">Black Olives</label>
+                                <input type="checkbox" id="Black-olives" name="toppings" value="black-olives">
+                                <label for="Black-olives">Black Olives</label>
                             </div>
                             <div class="topping-item">
-                                <input type="checkbox" id="green-peppers" name="toppings" value="green-peppers">
-                                <label for="green-peppers">Green Peppers</label>
+                                <input type="checkbox" id="Green-peppers" name="toppings" value="green-peppers">
+                                <label for="Green-peppers">Green Peppers</label>
                             </div>
                             <div class="topping-item">
-                                <input type="checkbox" id="pineapple" name="toppings" value="pineapple">
-                                <label for="pineapple">Pineapple</label>
+                                <input type="checkbox" id="Pineapple" name="toppings" value="pineapple">
+                                <label for="Pineapple">Pineapple</label>
                             </div>
                             <div class="topping-item">
-                                <input type="checkbox" id="spinach" name="toppings" value="spinach">
-                                <label for="spinach">Spinach</label>
-                            </div>
-
-                            <div class="topping-item">
-                                <input type="checkbox" id="chicken" name="toppings" value="chicken">
-                                <label for="chicken">Grilled Chicken</label>
+                                <input type="checkbox" id="Spinach" name="toppings" value="spinach">
+                                <label for="Spinach">Spinach</label>
                             </div>
 
                             <div class="topping-item">
-                                <input type="checkbox" id="jalapenos" name="toppings" value="jalapenos">
-                                <label for="jalapenos">Jalapeños</label>
+                                <input type="checkbox" id="Chicken" name="toppings" value="chicken">
+                                <label for="Chicken">Grilled Chicken</label>
+                            </div>
+
+                            <div class="topping-item">
+                                <input type="checkbox" id="Jalapenos" name="toppings" value="jalapenos">
+                                <label for="Jalapenos">Jalapeños</label>
                             </div>
                         </div>
 
                         <br><br>
+                        <div id="price-breakdown" class="price-breakdown">
+                            <h3>Price Breakdown:</h3>
+                            <ul id="price-list">
+                                <li>Base Price: $10.00</li>
+                            </ul>
+                            <p><strong>Total: $10.00</strong></p>
+                        </div>
+                        <br>
                         <button type="submit" class="ordernow">Add to cart</button>
                     </form>
                 </div>
