@@ -53,18 +53,18 @@ window.addEventListener('resize', resizeCanvas);
 
 // Ingredient positions and styles
 const ingredientStyles = {
-    pepperoni: { color: 'red', radius: 20 },
-    mushrooms: { color: 'beige', radius: 15 },
-    onions: { color: 'purple', radius: 12 },
-    sausage: { color: 'crimson', width: 30, height: 15 }, // Rectangular
-    bacon: { color: 'darkred', width: 40, height: 16 }, // Rectangular
-    'extra-cheese': { color: 'yellow', radius: 25 },
-    'black-olives': { color: 'black', radius: 10 },
-    'green-peppers': { color: 'green', radius: 15 },
-    pineapple: { color: 'gold', width: 30, height: 30 }, // Rectangular
-    spinach: { color: 'darkgreen', radius: 15 },
-    chicken: { color: 'coral', width: 36, height: 24 }, // Rectangular
-    jalapenos: { color: 'limegreen', radius: 12 },
+    pepperoni: { color: 'red', radius: 40 },
+    mushrooms: { color: 'beige', radius: 30 },
+    onions: { color: 'purple', radius: 24 },
+    sausage: { color: 'crimson', width: 60, height: 30 }, // Rectangular
+    bacon: { color: 'darkred', width: 80, height: 32 }, // Rectangular
+    'extra-cheese': { color: 'yellow', radius: 50 },
+    'black-olives': { color: 'black', radius: 20 },
+    'green-peppers': { color: 'green', radius: 30 },
+    pineapple: { color: 'gold', width: 30, height: 60 }, // Rectangular
+    spinach: { color: 'darkgreen', radius: 30 },
+    chicken: { color: 'coral', width: 72, height: 48 }, // Rectangular
+    jalapenos: { color: 'limegreen', radius: 24 },
 };
 
 // Randomly place ingredients near the center
@@ -73,10 +73,13 @@ function drawIngredient(ingredient) {
     const centerX = canvas.width / 2;
     const centerY = canvas.height / 2;
 
-    // Generate random positions within a circular area around the center
+    // Adjust the maximum distance to allow ingredients closer to the crust
+    const maxDistance = canvas.width / 3;
+
+    // Generate random positions within the adjusted circular area
     for (let i = 0; i < 8; i++) { // Draw multiple instances of the ingredient
         const angle = Math.random() * Math.PI * 2; // Random angle
-        const distance = Math.random() * (canvas.width / 4); // Random distance from center
+        const distance = Math.random() * maxDistance; // Random distance from center
         const x = centerX + Math.cos(angle) * distance;
         const y = centerY + Math.sin(angle) * distance;
 
@@ -110,23 +113,44 @@ function updatePizza() {
 
 // Base price and ingredient prices
 const basePrice = 10.0;
+// Updated ingredient prices (reduced slightly)
 const ingredientPrices = {
-    pepperoni: 1.5,
-    mushrooms: 1.0,
-    onions: 0.8,
-    sausage: 2.0,
-    bacon: 2.5,
-    'extra-cheese': 1.5,
-    'black-olives': 1.0,
-    'green-peppers': 1.0,
-    pineapple: 1.5,
-    spinach: 1.0,
-    chicken: 2.5,
-    jalapenos: 1.0,
+    pepperoni: 1.2,
+    mushrooms: 0.8,
+    onions: 0.6,
+    sausage: 1.5,
+    bacon: 2.0,
+    'extra-cheese': 1.2,
+    'black-olives': 0.8,
+    'green-peppers': 0.8,
+    pineapple: 1.2,
+    spinach: 0.8,
+    chicken: 2.0,
+    jalapenos: 0.8,
 };
+
+// Size-based price adjustments
+const sizePrices = {
+    small: 0, // No additional cost for small
+    medium: 2.0, // $2 extra for medium
+    large: 4.0, // $4 extra for large
+};
+
+// Cap the number of toppings to 5
+function handleToppingSelection() {
+    const selectedToppings = document.querySelectorAll('input[name="toppings"]:checked');
+    if (selectedToppings.length > 5) {
+        alert('You can only select up to 5 toppings.');
+        // Uncheck the last selected topping
+        selectedToppings[selectedToppings.length - 1].checked = false;
+    }
+    updatePizza(); // Update the pizza drawing
+    updatePriceBreakdown(); // Update the price breakdown
+}
 
 // Update price breakdown
 function updatePriceBreakdown() {
+    const selectedSize = document.querySelector('#size').value;
     const selectedToppings = Array.from(
         document.querySelectorAll('input[name="toppings"]:checked')
     ).map(input => input.value);
@@ -139,6 +163,16 @@ function updatePriceBreakdown() {
 
     // Calculate total price
     let totalPrice = basePrice;
+
+    // Add size price adjustment
+    if (selectedSize) {
+        const sizePrice = sizePrices[selectedSize];
+        totalPrice += sizePrice;
+
+        const sizeListItem = document.createElement('li');
+        sizeListItem.textContent = `Size (${selectedSize.charAt(0).toUpperCase() + selectedSize.slice(1)}): $${sizePrice.toFixed(2)}`;
+        priceList.appendChild(sizeListItem);
+    }
 
     // Add selected toppings to the price list
     selectedToppings.forEach(topping => {
@@ -160,12 +194,12 @@ function updatePriceBreakdown() {
     totalPriceElement.textContent = `Total: $${totalPrice.toFixed(2)}`;
 }
 
+// Add event listeners to size dropdown
+document.querySelector('#size').addEventListener('change', updatePriceBreakdown);
+
 // Add event listeners to toppings checkboxes
 document.querySelectorAll('input[name="toppings"]').forEach(checkbox => {
-    checkbox.addEventListener('change', () => {
-        updatePizza(); // Update the pizza drawing
-        updatePriceBreakdown(); // Update the price breakdown
-    });
+    checkbox.addEventListener('change', handleToppingSelection);
 });
 
 // Initialize the price breakdown on page load
