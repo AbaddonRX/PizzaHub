@@ -1,39 +1,43 @@
-document.addEventListener("scroll", function () {
-    const homeSection = document.querySelector(".home");
-    const scrollPosition = window.scrollY;
-    homeSection.style.backgroundPositionY = `${scrollPosition * 0.01}px`;
+// Made by Noah Rashed & Ali Adnan
+// May 12th, 2025
+// CMP621A
+
+document.addEventListener("scroll", function () { // Parallax effect
+    const homeSection = document.querySelector(".home"); // Select the home section
+    const scrollPosition = window.scrollY; 
+    homeSection.style.backgroundPositionY = `${scrollPosition * 0.01}px`; // Scrolls image relative to position
 });
 
-function toggleDropdown(menuItem) {
+function toggleDropdown(menuItem) { // Toggle dropdown menu visibility
     const dropdown = menuItem.querySelector('.dropdown-menu');
-    const isVisible = dropdown.style.display === 'block';
-    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+    const isVisible = dropdown.style.display === 'block'; // Check if the dropdown is currently visible
+    document.querySelectorAll('.dropdown-menu').forEach(menu => { // Hide all other dropdowns
         menu.style.display = 'none';
     });
-    dropdown.style.display = isVisible ? 'none' : 'block';
+    dropdown.style.display = isVisible ? 'none' : 'block'; // Show or hide the clicked dropdown
 }
 
 // ADD TO CART FUNCTIONALITY =====================================================================
-let cartCount = parseInt(localStorage.getItem('cartCount')) || 0;
+let cartCount = parseInt(localStorage.getItem('cartCount')) || 0; // Initialize cart count from localStorage
 updateCartCounter();
 
 function addToCart(pizzaName, button) {
-    const selectedSize = button.parentElement.querySelector('input[type="radio"]:checked');
+    const selectedSize = button.parentElement.querySelector('input[type="radio"]:checked'); // Get the selected size
     if (selectedSize) {
         const sizeAndPrice = selectedSize.value;
-        alert(`${pizzaName} (${sizeAndPrice}) added to cart!`);
-        cartCount++;
+        alert(`${pizzaName} (${sizeAndPrice}) added to cart!`); // Alert the user
+        cartCount++; // Increment cart count
         localStorage.setItem('cartCount', cartCount); // Save the updated count to localStorage
         updateCartCounter();
     } else {
-        alert("Please select a size before adding to cart.");
+        alert("Please select a size before adding to cart."); // Alert if no size is selected
     }
 }
 
 function updateCartCounter() {
     const cartCounter = document.getElementById('cart-counter');
     if (cartCounter) {
-        cartCounter.textContent = cartCount;
+        cartCounter.textContent = cartCount; // Update the cart counter display
     }
 }
 // ADD TO CART END ===============================================================================

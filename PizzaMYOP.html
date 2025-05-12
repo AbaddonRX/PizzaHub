@@ -1,3 +1,9 @@
+<!--
+Made by Noah Rashed & Ali Adnan
+May 12th, 2025
+CMP 621A
+-->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,6 +17,7 @@
     <body>
         <div class="wrapper">
 
+            <!-- Navigation Bar for MYOP page -->
             <div class="navbar">
                 <img src="Content/PizzaHub_Logo.png" class="mainLogo">
                 <div class="navbar-links">
@@ -22,13 +29,17 @@
                 <span class="cart-counter" id="cart-counter">0</span>
             </div>
 
+            <!-- Title on MYOP page -->
             <div class="titleBar"><h1>Make-Your-Own Pizza!</h1></div>
 
+            <!-- Image on MYOP page -->
             <div class="myopContainer">
                 <div class="pizzaCanvasWrapper">
                     <img src="Content/myoptopdown.webp" class="pizzaImg">
                     <canvas id="pizzaCanvas"></canvas>
                 </div>
+
+                <!-- Form on MYOP page -->
                 <div class="myop-form">
                     <form id="myop-form" action="order.html" method="POST">
                         <label for="order-type">Choose your order type: <br></label>
@@ -69,6 +80,7 @@
                         <br><br>
                         <label for="toppings">Choose your toppings: <br> </label><br>
 
+                        <!-- Topping selections on MYOP page -->
                         <div class="toppings-container">
                             <div class="topping-item">
                                 <input type="checkbox" id="Pepperoni" name="toppings" value="pepperoni">
@@ -123,6 +135,8 @@
                         </div>
 
                         <br><br>
+
+                        <!-- Price for MYOP -->
                         <div id="price-breakdown" class="price-breakdown">
                             <h3>Price Breakdown:</h3>
                             <ul id="price-list">
@@ -136,6 +150,8 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Footer for MYOP page -->
         <footer class="footer">
             <p>&copy; 2025 PizzaHub. All rights reserved.</p>
         </footer>
